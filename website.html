@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIST Club</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .triangle-right {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 30px solid #f97316; /* Orange color */
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen flex flex-col">
+
+    <!-- Header Navigation -->
+    <header class="bg-orange-500 text-black p-4 md:p-6 flex flex-col sm:flex-row items-center justify-between shadow-lg">
+        <div class="flex items-center space-x-2 mb-4 sm:mb-0">
+            <img src="logo.png" alt="MIST Club Logo" class="h-12">
+        </div>
+        <nav class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 font-semibold">
+            <button onclick="showPage('home')" class="bg-black text-orange-500 py-2 px-6 rounded-full hover:bg-gray-800 transition-colors">Home</button>
+            <button onclick="showPage('glazing')" class="bg-orange-500 text-black py-2 px-6 rounded-full hover:bg-orange-600 transition-colors">Glazing MIST</button>
+            <button onclick="showPage('about')" class="bg-black text-white py-2 px-6 rounded-full hover:bg-gray-800 transition-colors">About Us</button>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow p-8 md:p-12 overflow-y-auto">
+
+        <!-- Home Page Content -->
+        <section id="home-page" class="page-section">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-orange-500 text-white p-6 rounded-lg shadow-lg text-center">
+                    <img src="1.png" alt="Image 1" class="w-full h-auto rounded-md mb-4">
+                    <p class="text-sm font-medium">Article 1</p>
+                </div>
+                <div class="bg-orange-500 text-white p-6 rounded-lg shadow-lg text-center">
+                    <img src="2.png" alt="Image 2" class="w-full h-auto rounded-md mb-4">
+                    <p class="text-sm font-medium">Article 2</p>
+                </div>
+                <div class="bg-orange-500 text-white p-6 rounded-lg shadow-lg text-center">
+                    <img src="3.png" alt="Image 3" class="w-full h-auto rounded-md mb-4">
+                    <p class="text-sm font-medium">Article 3</p>
+                </div>
+            </div>
+
+            <div class="mt-16 flex items-center justify-center space-x-4">
+                <button id="toggleButton" class="bg-orange-500 p-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors">
+                    <div class="triangle-right"></div>
+                </button>
+                <span id="yayText" class="text-xl font-bold transition-opacity duration-300 opacity-0">YOU CLICKED THE BUTTON YAYYY!!!</span>
+            </div>
+        </section>
+
+        <!-- Glazing MIST Page Content -->
+        <section id="glazing-page" class="page-section hidden text-center max-w-4xl mx-auto">
+            <div class="flex flex-col items-center justify-center">
+                <svg class="w-full h-auto max-w-2xl" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <style>
+                            .cls-1 { fill: #f97316; }
+                            .cls-2 { fill: #fff; }
+                        </style>
+                    </defs>
+                    <g transform="scale(0.8) translate(100, 0)">
+                        <g id="MIST-Logo-Left">
+                            <path class="cls-1" d="M112.55,103.55c-1.89-1.93-3.8-3.76-5.74-5.59L82.17,73.12c-2.47-2.31-6.17-1.42-7.85,1.96-1.5,3.01-1.12,6.72,1,9.39l11.45,13.23c2.27,2.62,4.8,5.18,7.57,7.63,13.78,12.28,33.56,19.34,51.98,19.29,19.5-.06,37.37-7.8,51.84-21.43,15.68-15.01,23.33-35.32,23.16-56.55-.17-21.2-8.31-40.48-23.75-55.79-13.68-13.79-32.08-20.94-51.27-20.69-16.74.21-32.99,6.01-46.06,17.15-4.22,3.61-4.7,9.97-1.07,14.28s9.96,4.71,14.28,1.07c10.53-9,23.23-14.15,36.5-14.27,14.15-.12,27.1,5.2,36.95,14.7,10.12,9.81,15.34,22.42,15.42,36.08.08,13.6-5.7,26.06-16.32,35.63-9.5,8.68-21.84,13.2-34.9,13.1-12.75-.1-24.8-4.32-34.9-12.24-2.8-2.18-5.77-4.14-8.88-5.91-2.92-1.7-6.52-1.39-9.15.75-2.61,2.12-3.66,5.7-2.88,8.96,2.25,9.45,6.1,18.06,10.66,25.99,3.78,6.6,8.71,12.7,14.52,18.06,16.03,14.77,35.84,23.36,58.07,23.34,24.3-.02,46.05-9.42,61.9-27.15,16.5-18.73,24.95-43.19,24.89-68.96-.05-25.77-9.57-49.9-26.66-68.21-17.76-19.12-40.94-28.71-65.77-28.48-26.16.24-50.62,11.02-68.32,30.29-3.23,3.48-4.2,8.68-2.31,13.16.58,1.4,1.42,2.69,2.44,3.77,5.55,5.88,11.2,11.5,17.43,16.74,5.49,4.64,8.1,11.22,6.58,18.09-1.55,6.9-6.32,12.43-12.92,14.64-6.83,2.28-14.07,1.06-19.74-3.18-7.79-5.83-14.65-12.78-20.47-20.4-3.59-4.7-9.82-5.74-14.55-2.22s-5.73,9.81-2.22,14.55c7.87,10.27,16.92,19.74,27.18,28.26,1.43,1.19,2.94,2.3,4.52,3.33,7.9,5.08,16.09,9.45,24.62,13.06,14.66,6.21,29.98,9.41,45.4,9.58,18.7.2,36.43-5.22,50.77-16.19,17.4-13.56,26.79-32.22,26.68-52.54-.11-20.32-9.28-39.12-26.37-52.92-14.09-11.23-31.54-17.06-50.1-16.92-16.09.12-31.42,6.04-43.68,16.48-11.27,9.66-19.13,22.38-22.61,36.93-1.63,6.86-7.85,11.66-14.9,11.83-7.07.17-13.06-4.59-15.02-11.41-5.1-17.58-1.5-35.15,10.6-49.26C112.55,103.55,112.55,103.55,112.55,103.55Z"/>
+                        </g>
+                        <g id="MIST-Logo-Right">
+                            <path class="cls-1" d="M375.39,103.55c1.89-1.93,3.8-3.76,5.74-5.59L405.77,73.12c2.47-2.31,6.17-1.42,7.85,1.96,1.5,3.01,1.12,6.72-1,9.39l-11.45,13.23c-2.27,2.62-4.8,5.18-7.57,7.63-13.78,12.28-33.56,19.34-51.98,19.29-19.5-.06-37.37-7.8-51.84-21.43-15.68-15.01-23.33-35.32-23.16-56.55.17-21.2,8.31-40.48,23.75-55.79,13.68-13.79,32.08-20.94,51.27-20.69,16.74.21,32.99,6.01,46.06,17.15,4.22,3.61,4.7,9.97,1.07,14.28s-9.96,4.71-14.28,1.07c-10.53-9-23.23-14.15-36.5-14.27-14.15-.12-27.1,5.2-36.95,14.7-10.12,9.81-15.34,22.42-15.42,36.08-.08,13.6,5.7,26.06,16.32,35.63,9.5,8.68,21.84,13.2,34.9,13.1,12.75-.1,24.8-4.32,34.9-12.24,2.8-2.18,5.77-4.14,8.88-5.91,2.92-1.7,6.52-1.39,9.15.75,2.61,2.12,3.66,5.7,2.88,8.96-2.25,9.45-6.1,18.06-10.66,25.99-3.78,6.6-8.71,12.7-14.52,18.06-16.03,14.77-35.84,23.36-58.07,23.34-24.3-.02-46.05-9.42-61.9-27.15-16.5-18.73-24.95-43.19-24.89-68.96.05-25.77,9.57-49.9,26.66-68.21,17.76-19.12,40.94-28.71,65.77-28.48,26.16.24,50.62,11.02,68.32,30.29,3.23,3.48,4.2,8.68,2.31,13.16-.58,1.4-1.42,2.69-2.44,3.77-5.55,5.88-11.2,11.5-17.43,16.74-5.49,4.64-8.1,11.22-6.58,18.09,1.55,6.9,6.32,12.43,12.92,14.64,6.83,2.28,14.07,1.06,19.74-3.18,7.79-5.83,14.65-12.78,20.47-20.4,3.59-4.7,9.82-5.74,14.55-2.22s5.73,9.81,2.22,14.55c-7.87,10.27-16.92,19.74-27.18,28.26-1.43,1.19-2.94,2.3-4.52,3.33-7.9,5.08-16.09,9.45-24.62,13.06-14.66,6.21-29.98,9.41-45.4,9.58-18.7.2-36.43-5.22-50.77-16.19-17.4-13.56-26.79-32.22-26.68-52.54.11-20.32,9.28-39.12,26.37-52.92,14.09-11.23,31.54-17.06,50.1-16.92,16.09.12,31.42,6.04,43.68,16.48,11.27,9.66,19.13,22.38,22.61,36.93,1.63,6.86,7.85,11.66,14.9,11.83,7.07.17,13.06-4.59,15.02-11.41,5.1-17.58,1.5-35.15-10.6-49.26C375.39,103.55,375.39,103.55,375.39,103.55Z"/>
+                        </g>
+                    </g>
+                </svg>
+                <div class="mt-8 text-lg md:text-xl max-w-2xl text-center leading-relaxed">
+                    <p class="mb-6">Our passionate team of Information and Network Security enthusiasts is dedicated to inspiring and guiding students who are eager to explore the rapidly evolving world of Computer Science. We believe in making complex concepts accessible and engaging, offering mentorship that blends theoretical understanding with practical applications. By fostering curiosity and a problem-solving mindset, we empower students to not only keep pace with the digital era but also to contribute meaningfully to it.</p>
+                    <p>To support this mission, we provide students with essential tools and structured opportunities to enhance their skills. Through workshops, knowledge-sharing sessions, and hands-on projects, learners gain practical exposure that strengthens their technical foundation. Our approach is designed to bridge the gap between academic study and real-world practice, ensuring that every student feels confident in applying their knowledge to diverse challenges.</p>
+                    <p>Beyond student-focused initiatives, our team also extends valuable technical assistance to organizations embracing digitization. In an era where secure and efficient digital operations are critical, we help institutions adopt modern practices while maintaining resilience against evolving cyber threats. By cultivating a culture of continuous learning and growth, we not only advance excellence in Information and Network Security but also contribute to building a safer, more innovative digital future.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Page Content -->
+        <section id="about-page" class="page-section hidden flex flex-col items-center justify-center h-full">
+            <div class="bg-orange-500 text-black p-10 rounded-lg shadow-lg text-center transform transition-transform hover:scale-105 duration-300">
+                <button id="pressMeButton" class="text-xl md:text-2xl font-bold py-4 px-8 rounded-lg shadow-xl bg-black text-white hover:bg-gray-800 transition-colors">press me pls</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Custom Modal/Message Box -->
+    <div id="infoModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white text-black p-8 rounded-lg shadow-2xl max-w-sm w-full relative">
+            <h2 class="text-2xl font-bold mb-4">MIST Club Member Info</h2>
+            <p class="text-lg"><strong>Name:</strong>  Avantika Bhattacharya</p>
+            <p class="text-lg"><strong>Reg. No:</strong> 240968258</p>
+            <p class="text-lg"><strong>Phone:</strong> +91 7439952270</p>
+            <button onclick="closeModal()" class="mt-6 bg-orange-500 text-white px-6 py-2 rounded-full font-bold hover:bg-orange-600 transition-colors">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for page navigation, button toggle, and modal
+        const pageSections = document.querySelectorAll('.page-section');
+        const toggleButton = document.getElementById('toggleButton');
+        const yayText = document.getElementById('yayText');
+        const pressMeButton = document.getElementById('pressMeButton');
+        const infoModal = document.getElementById('infoModal');
+
+        function showPage(pageId) {
+            pageSections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(pageId + '-page').classList.remove('hidden');
+        }
+
+        toggleButton.addEventListener('click', () => {
+            if (yayText.classList.contains('opacity-0')) {
+                yayText.classList.remove('opacity-0');
+                yayText.classList.add('opacity-100');
+            } else {
+                yayText.classList.remove('opacity-100');
+                yayText.classList.add('opacity-0');
+            }
+        });
+
+        pressMeButton.addEventListener('click', () => {
+            infoModal.classList.remove('hidden');
+        });
+
+        function closeModal() {
+            infoModal.classList.add('hidden');
+        }
+
+        // Initially show the home page
+        window.onload = () => {
+            showPage('home');
+        };
+    </script>
+</body>
+</html>
